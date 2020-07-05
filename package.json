@@ -1,0 +1,39 @@
+{
+  "name": "error-logger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "npm-run-all -p install-client install-server",
+    "install-client": "cd client && npm install",
+    "install-server": "cd server && npm install",
+    "start": "npm-run-all -p start-server start-client",
+    "start-client": "cd client && npm run serve",
+    "start-server": "cd server && npm start",
+    "build": "npm-run-all -s build-client",
+    "build-client": "cd client && npm run build",
+    "test": "npm-run-all -s test-server test-client test-cypress",
+    "test-client": "cd client && npm test",
+    "test-server": "cd server && npm test",
+    "test-cypress": "start-server-and-test start-server http://localhost:3000 cy:run",
+    "lint": "npm-run-all -s lint-server lint-client",
+    "lint-client": "cd client && npm run lint",
+    "lint-server": "cd server && npm run eslint",
+    "cypress": "start-server-and-test start-server http://localhost:3000 cy:open",
+    "cy:run": "cypress run",
+    "cy:open": "cypress open"
+  },
+  "dependencies": {
+    "npm-run-all": "4.1.5"
+  },
+  "devDependencies": {
+    "cypress": "3.8.3",
+    "start-server-and-test": "1.10.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VictorWinberg/error-logger.git"
+  },
+  "author": "VictorWinberg, AnnieLeonia",
+  "license": "ISC"
+}

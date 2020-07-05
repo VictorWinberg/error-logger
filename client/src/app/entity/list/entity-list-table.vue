@@ -1,0 +1,77 @@
+<template>
+  <ul v-if="!loading">
+    <li v-for="entity in entities" :key="entity.id">
+      <hr />
+      Error: {{ entity.ErrorId }}
+      <br />
+      <b>{{ entity.browser }}</b>
+      <br />
+      <b>{{ entity.browser_version }}</b>
+      <br />
+      <b>{{ entity.platform }}</b>
+      <br />
+      <b>{{ entity.platform_version }}</b>
+      <br />
+      <b>{{ entity.location }}</b>
+      <br />
+      <button @click="showEntity(entity.id)">SHOW</button>
+      <button @click="editEntity(entity.id)">EDIT</button>
+      <button @click="removeEntity(entity.id)">REMOVE</button>
+    </li>
+    <hr />
+  </ul>
+</template>
+
+<script lang="ts">
+import Vue from "vue";
+import { bus } from "@/main";
+
+export default Vue.extend({
+  name: "EntityListTable",
+  data() {
+    return {
+      entities: [],
+      loading: true
+    };
+  },
+  created() {
+    this.refreshEntities();
+    bus.$on("refresh", () => this.refreshEntities());
+  },
+  methods: {
+    async refreshEntities() {
+      this.loading = true;
+      this.entities = await this.$store.dispatch("entity/list");
+      this.loading = false;
+    },
+    showEntity(id: string) {
+      this.$router.push({
+        name: "EntityShow",
+        params: { id }
+      });
+    },
+    editEntity(id: string) {
+      this.$router.push({
+        name: "EntityEdit",
+        params: { id }
+      });
+    },
+    async removeEntity(id: string) {
+      this.loading = true;
+      await this.$store.dispatch("entity/remove", [id]);
+      await this.refreshEntities();
+      this.loading = false;
+    }
+  }
+});
+</script>
+
+<style scoped lang="scss">
+ul {
+  list-style: none;
+  padding: 0;
+}
+.error {
+  color: red;
+}
+</style>
