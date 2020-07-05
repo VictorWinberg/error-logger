@@ -2,17 +2,9 @@ import path from "path";
 import { Sequelize } from "sequelize";
 import readdirRec from "fs-readdir-recursive";
 
-const env = process.env.NODE_ENV || "development";
-const config = require("../dbconfig.json")[env];
-
 const db: any = {};
 
-const _sequelize = new Sequelize(
-  config.database,
-  config.username,
-  config.password,
-  config
-);
+const _sequelize = new Sequelize(process.env.DATABASE_URL || "");
 
 readdirRec(__dirname)
   .filter(f => f.includes("-model."))
