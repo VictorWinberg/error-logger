@@ -3,6 +3,7 @@
 ## Setup
 
 ```
+echo DATABASE_URL=postgres://localhost/errlog > .env
 npm install
 npm start
 ```
