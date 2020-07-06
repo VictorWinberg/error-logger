@@ -4,9 +4,9 @@ import bodyParser from "body-parser";
 
 import db from "./models";
 import routes from "./routes";
+import swaggerUi from "./swagger-ui";
 
 const app = express();
-
 const clientDist = path.resolve(__dirname, "..", "..", "client", "dist");
 
 app.use(express.static(clientDist));
@@ -14,6 +14,7 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + "/static"));
 
 routes(app, db);
+swaggerUi(app);
 
 /*
  * Alters tables to fit models
