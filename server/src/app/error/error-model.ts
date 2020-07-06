@@ -1,5 +1,18 @@
 import { DataTypes } from "sequelize";
 
+/**
+ * @swagger
+ * definitions:
+ *   Error:
+ *     properties:
+ *       id:
+ *         type: string
+ *         format: uuid
+ *       type:
+ *         type: string
+ *       stacktrace:
+ *         type: string
+ */
 export default (sequelize: any) => {
   const Error = sequelize.define(
     "Error",

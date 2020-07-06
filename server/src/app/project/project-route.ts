@@ -1,7 +1,28 @@
 import { Express, Request, Response } from "express";
 import { omit } from "lodash/fp";
 
+/**
+ * @swagger
+ * tags:
+ *   name: Projects
+ */
 export default (app: Express, db: any) => {
+  /**
+   * @swagger
+   * /projects:
+   *   get:
+   *     summary: Returns projects
+   *     tags: [Projects]
+   *     produces:
+   *       - application/json
+   *     responses:
+   *       200:
+   *         description: OK
+   *         schema:
+   *           type: array
+   *           items:
+   *             $ref: '#/definitions/Project'
+   */
   app.get("/api/projects", async (req: Request, res: Response) => {
     try {
       const results = await db.Project.findAll();
@@ -60,7 +81,9 @@ export default (app: Express, db: any) => {
       if (result == null) {
         return res.status(404).send("Project Not Found");
       }
-      await result.destroy({ force: true });
+      await result.destroy({
+        force: true
+      });
       return res.send({ id });
     } catch (err) {
       console.error("Error deleting project", JSON.stringify(err));

@@ -58,7 +58,9 @@ export default (app: Express, db: any) => {
       if (result == null) {
         return res.status(404).send("Entity Not Found");
       }
-      await result.destroy({ force: true });
+      await result.destroy({
+        force: true
+      });
       return res.send({ id });
     } catch (err) {
       console.error("Error deleting entity", JSON.stringify(err));

@@ -1,5 +1,16 @@
 import { DataTypes } from "sequelize";
 
+/**
+ * @swagger
+ * definitions:
+ *   Project:
+ *     properties:
+ *       id:
+ *         type: string
+ *         format: uuid
+ *       name:
+ *         type: string
+ */
 export default (sequelize: any) => {
   const Project = sequelize.define(
     "Project",
