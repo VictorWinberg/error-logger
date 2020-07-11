@@ -11,6 +11,8 @@ jobs:
   build:
     name: Test and Build
     runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: postgres://localhost/errlog
 
     strategy:
       matrix:
