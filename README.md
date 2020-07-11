@@ -12,7 +12,7 @@ createdb errlog
 echo DATABASE_URL=postgres://localhost/errlog > .env
 ```
 
-## NPM Setup
+## Node Setup
 
 ```
 npm install
