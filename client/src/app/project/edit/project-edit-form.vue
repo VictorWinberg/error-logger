@@ -1,9 +1,19 @@
 <template>
   <div v-if="!loading">
-    <label for="name">Name</label>
-    <input id="name" v-model="project.name" type="text" />
+    <b-container fluid>
+      <b-row class="text-right">
+        <b-col sm="3">
+          <label for="name">Name</label>
+        </b-col>
+        <b-col sm="9">
+          <b-form-input v-model="project.name" type="text"></b-form-input>
+        </b-col>
+      </b-row>
+    </b-container>
     <br />
-    <button @click="editProject(id)">SAVE</button>
+    <b-button variant="outline-success" @click="editProject(id)">
+      SAVE
+    </b-button>
   </div>
 </template>
 

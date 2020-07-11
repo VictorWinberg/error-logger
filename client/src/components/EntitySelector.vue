@@ -1,9 +1,13 @@
 <template>
-  <select v-model="localValue">
-    <option v-for="option in entities" :key="option.id" :value="option.id">
+  <b-form-select v-model="localValue">
+    <b-form-select-option
+      v-for="option in entities"
+      :key="option.id"
+      :value="option.id"
+    >
       {{ option[optionName] }}
-    </option>
-  </select>
+    </b-form-select-option>
+  </b-form-select>
 </template>
 
 <script>

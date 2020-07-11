@@ -1,7 +1,9 @@
 <template>
   <div>
     <error-new-form></error-new-form>
-    <button @click="back()">GO BACK</button>
+    <b-button variant="dark" @click="back()">
+      GO BACK
+    </b-button>
   </div>
 </template>
 
