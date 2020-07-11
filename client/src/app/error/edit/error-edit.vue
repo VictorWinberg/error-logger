@@ -1,8 +1,12 @@
 <template>
   <div>
     <error-edit-form :id="id"></error-edit-form>
-    <button @click="back()">GO BACK</button>
-    <button @click="showError(id)">SHOW</button>
+    <b-button variant="outline-dark" @click="back()">
+      GO BACK
+    </b-button>
+    <b-button variant="outline-primary" @click="showError(id)">
+      SHOW
+    </b-button>
   </div>
 </template>
 

@@ -89,6 +89,7 @@ export default Vue.extend({
 }
 .menu {
   height: 100%;
+  width: 100%;
 
   &.show {
     visibility: visible;
