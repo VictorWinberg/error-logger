@@ -1,5 +1,10 @@
 # Error Logger
 
+## Prerequisite
+
+- Node (`brew install node`)
+- Postgres (`brew install postgresql`)
+
 ## Setup
 
 ```
