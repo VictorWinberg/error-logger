@@ -1,19 +1,21 @@
 # Error Logger
 
-## Setup
+## Prerequisite
 
-```
-echo DATABASE_URL=postgres://localhost/errlog > .env
-npm install
-npm start
-```
+- Node (macOS: `brew install node`)
+- Postgres (macOS: `brew install postgres`)
 
-## Database setup
+## Database Setup
 
 ```
 createdb errlog
+echo DATABASE_URL=postgres://localhost/errlog > .env
 ```
 
-**Then go to url: `/api/sync`**
+## Node Setup
 
-> Setup is complete
+```
+npm install
+npm run setup
+npm start
+```
