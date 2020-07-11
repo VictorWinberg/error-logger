@@ -54,7 +54,7 @@
         </b-col>
       </b-row>
     </b-container>
-    <b-button variant="outline-success" @click="addEntity()">CREATE!!</b-button>
+    <b-button variant="outline-success" @click="addEntity()">CREATE</b-button>
   </div>
 </template>
 

@@ -1,5 +1,11 @@
 export default [
   {
+    path: "/entities/table",
+    meta: { name: "Table", static: false },
+    component: (): Promise<{}> => import("./table/entity-table.vue"),
+    props: true
+  },
+  {
     path: "/entities",
     meta: { name: "Entities", static: false },
     component: (): Promise<{}> => import("./entity-index.vue"),
