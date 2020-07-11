@@ -12,7 +12,22 @@ jobs:
     name: Test and Build
     runs-on: ubuntu-latest
     env:
-      DATABASE_URL: postgres://localhost/errlog
+      DATABASE_URL: postgres://usr:pw@localhost/db
+
+    services:
+      postgres:
+        image: postgres:latest
+        env:
+          POSTGRES_USER: usr
+          POSTGRES_PASSWORD: pw
+          POSTGRES_DB: db
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
 
     strategy:
       matrix:
@@ -29,6 +44,9 @@ jobs:
         uses: cypress-io/github-action@v1
         with:
           runTests: false
+
+      - name: Setup
+        run: npm run setup
 
       - name: Build
         run: npm run build

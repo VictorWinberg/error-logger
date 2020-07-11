@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "setup": "ts-node -e 'require(\"./src/setup\").default()'",
     "start": "nodemon -e ts --exec ts-node index",
     "eslint": "eslint . --ignore-path .gitignore",
     "test": "jest --coverage",
