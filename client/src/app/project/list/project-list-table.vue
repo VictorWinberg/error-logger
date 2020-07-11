@@ -56,7 +56,7 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 ul {
   list-style: none;
   padding: 0;
