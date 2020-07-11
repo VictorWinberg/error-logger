@@ -7,11 +7,13 @@ export default [
       {
         name: "EntityList",
         path: "",
+        meta: { name: "List", static: false },
         component: (): Promise<{}> => import("./list/entity-list.vue")
       },
       {
         name: "EntityNew",
         path: "new",
+        meta: { name: "New", static: false },
         component: (): Promise<{}> => import("./new/entity-new.vue"),
         props: true
       },
