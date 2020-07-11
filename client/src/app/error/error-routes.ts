@@ -7,11 +7,13 @@ export default [
       {
         name: "ErrorList",
         path: "",
+        meta: { name: "List", static: false },
         component: (): Promise<{}> => import("./list/error-list.vue")
       },
       {
         name: "ErrorNew",
         path: "new",
+        meta: { name: "New", static: false },
         component: (): Promise<{}> => import("./new/error-new.vue"),
         props: true
       },
