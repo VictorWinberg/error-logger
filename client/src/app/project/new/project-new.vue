@@ -1,7 +1,9 @@
 <template>
   <div>
     <project-new-form></project-new-form>
-    <button @click="back()">GO BACK</button>
+    <b-button variant="dark" @click="back()">
+      GO BACK
+    </b-button>
   </div>
 </template>
 

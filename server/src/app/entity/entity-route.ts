@@ -2,9 +2,21 @@ import { Express, Request, Response } from "express";
 import { omit } from "lodash/fp";
 
 export default (app: Express, db: any) => {
+  const { fn, col } = db.sequelize;
   app.get("/api/entities", async (req: Request, res: Response) => {
     try {
-      const results = await db.Entity.findAll();
+      const results = await db.Entity.findAll({
+        include: [
+          {
+            model: db.Error,
+            attributes: [
+              "type",
+              [fn("substring", col("stacktrace"), 1, 50), "stacktrace"]
+            ]
+          }
+        ]
+      });
+      // [fn("substring", col("browser"), 1, 2), "short"];
       return res.send(results);
     } catch (err) {
       console.error("Error querying entities", JSON.stringify(err));

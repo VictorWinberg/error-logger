@@ -1,5 +1,5 @@
 {
-  "name": "error-logger-client",
+  "name": "glitchy-client",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,8 @@
     "test": "vue-cli-service test:unit --coverage"
   },
   "dependencies": {
+    "bootstrap": "^4.5.0",
+    "bootstrap-vue": "^2.15.0",
     "@mdi/font": "^5.3.45",
     "buefy": "0.8.20",
     "core-js": "3.6.5",
