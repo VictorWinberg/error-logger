@@ -2,7 +2,7 @@
   <ul v-if="!loading">
     <li v-for="entity in entities" :key="entity.id">
       <hr />
-      Error: {{ entity.ErrorId }}
+      Error: {{ entity.Error.stacktrace }}
       <br />
       <b>{{ entity.browser }}</b>
       <br />

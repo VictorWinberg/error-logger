@@ -9,6 +9,8 @@ import "./plugins/bueify";
 import "./plugins/bootstrap";
 import "./registerServiceWorker";
 
+import "@/assets/scss/app.scss";
+
 Vue.config.productionTip = false;
 
 Object.defineProperty(Vue.prototype, "$_", { value: _ });

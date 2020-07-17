@@ -2,7 +2,7 @@
   <ul v-if="!loading">
     <li v-for="error in errors" :key="error.id">
       <hr />
-      Project: {{ error.ProjectId }}
+      Project: {{ error.Project.name }}
       <br />
       <b>{{ error.type }}</b>
       <br />

@@ -3,7 +3,7 @@
     <b-container fluid>
       <b-row class="text-right">
         <b-col sm="3">
-          <label> Entity </label>
+          <label> Error </label>
         </b-col>
         <b-col sm="9">
           <entity-selector
