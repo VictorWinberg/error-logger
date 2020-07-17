@@ -4,7 +4,7 @@ import { omit } from "lodash/fp";
 /**
  * @swagger
  * tags:
- *   name: Projects
+ *   name: Project
  */
 export default (app: Express, db: any) => {
   /**
@@ -12,7 +12,7 @@ export default (app: Express, db: any) => {
    * /projects:
    *   get:
    *     summary: Returns projects
-   *     tags: [Projects]
+   *     tags: [Project]
    *     produces:
    *       - application/json
    *     responses:

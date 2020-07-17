@@ -8,8 +8,6 @@ import { DataTypes } from "sequelize";
  *       id:
  *         type: string
  *         format: uuid
- *       error:
- *         $ref: "#/definitions/Error"
  *       browser:
  *         type: string
  *       browserVersion:
@@ -20,6 +18,8 @@ import { DataTypes } from "sequelize";
  *         type: string
  *       location:
  *         type: string
+ *       error:
+ *         $ref: "#/definitions/Error"
  */
 export default (sequelize: any) => {
   const Entity = sequelize.define(

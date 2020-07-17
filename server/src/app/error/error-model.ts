@@ -12,6 +12,8 @@ import { DataTypes } from "sequelize";
  *         type: string
  *       stacktrace:
  *         type: string
+ *       project:
+ *         $ref: "#/definitions/Project"
  */
 export default (sequelize: any) => {
   const Error = sequelize.define(
