@@ -2,7 +2,7 @@
   <ul v-if="!loading">
     <li v-for="entity in entities" :key="entity.id">
       <hr />
-      Error: {{ entity.ErrorId }}
+      Error: {{ entity.Error.stacktrace }}
       <br />
       <b>{{ entity.browser }}</b>
       <br />
@@ -14,9 +14,15 @@
       <br />
       <b>{{ entity.location }}</b>
       <br />
-      <button @click="showEntity(entity.id)">SHOW</button>
-      <button @click="editEntity(entity.id)">EDIT</button>
-      <button @click="removeEntity(entity.id)">REMOVE</button>
+      <b-button variant="outline-primary" @click="showEntity(entity.id)">
+        SHOW
+      </b-button>
+      <b-button variant="outline-dark" @click="editEntity(entity.id)">
+        EDIT
+      </b-button>
+      <b-button variant="outline-danger" @click="removeEntity(entity.id)">
+        REMOVE
+      </b-button>
     </li>
     <hr />
   </ul>

@@ -1,4 +1,4 @@
-# error-logger-client
+# glitchy-client
 
 ## Project setup
 

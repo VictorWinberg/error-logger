@@ -1,8 +1,12 @@
 <template>
   <div>
     <project-edit-form :id="id"></project-edit-form>
-    <button @click="back()">GO BACK</button>
-    <button @click="showProject(id)">SHOW</button>
+    <b-button variant="outline-dark" @click="back()">
+      GO BACK
+    </b-button>
+    <b-button variant="outline-primary" @click="showProject(id)">
+      SHOW
+    </b-button>
   </div>
 </template>
 

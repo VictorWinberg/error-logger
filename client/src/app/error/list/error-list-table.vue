@@ -2,15 +2,21 @@
   <ul v-if="!loading">
     <li v-for="error in errors" :key="error.id">
       <hr />
-      Project: {{ error.ProjectId }}
+      Project: {{ error.Project.name }}
       <br />
       <b>{{ error.type }}</b>
       <br />
       {{ error.stacktrace }}
       <br />
-      <button @click="showError(error.id)">SHOW</button>
-      <button @click="editError(error.id)">EDIT</button>
-      <button @click="removeError(error.id)">REMOVE</button>
+      <b-button variant="outline-primary" @click="showError(error.id)">
+        SHOW
+      </b-button>
+      <b-button variant="outline-dark" @click="editError(error.id)">
+        EDIT
+      </b-button>
+      <b-button variant="outline-danger" @click="removeError(error.id)">
+        REMOVE
+      </b-button>
     </li>
     <hr />
   </ul>

@@ -5,9 +5,11 @@ import "@mdi/font/css/materialdesignicons.css";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-import "./plugins/element";
 import "./plugins/bueify";
+import "./plugins/bootstrap";
 import "./registerServiceWorker";
+
+import "@/assets/scss/app.scss";
 
 Vue.config.productionTip = false;
 

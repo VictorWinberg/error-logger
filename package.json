@@ -1,5 +1,5 @@
 {
-  "name": "error-logger",
+  "name": "glitchy",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -34,7 +34,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VictorWinberg/error-logger.git"
+    "url": "git+https://github.com/VictorWinberg/glitchy.git"
   },
   "author": "VictorWinberg, AnnieLeonia",
   "license": "ISC"

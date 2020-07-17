@@ -1,8 +1,12 @@
 <template>
   <div>
     <entity-show-form :id="id"></entity-show-form>
-    <button @click="back()">GO BACK</button>
-    <button @click="editEntity(id)">EDIT</button>
+    <b-button variant="dark" @click="back()">
+      GO BACK
+    </b-button>
+    <b-button variant="outline-dark" @click="editEntity(id)">
+      EDIT
+    </b-button>
   </div>
 </template>
 

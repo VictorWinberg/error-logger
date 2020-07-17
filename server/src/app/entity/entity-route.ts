@@ -23,9 +23,20 @@ export default (app: Express, db: any) => {
    *           items:
    *             $ref: '#/definitions/Entity'
    */
+  const { fn, col } = db.sequelize;
   app.get("/api/entities", async (req: Request, res: Response) => {
     try {
-      const results = await db.Entity.findAll();
+      const results = await db.Entity.findAll({
+        include: [
+          {
+            model: db.Error,
+            attributes: [
+              "type",
+              [fn("substring", col("stacktrace"), 1, 50), "stacktrace"]
+            ]
+          }
+        ]
+      });
       return res.send(results);
     } catch (err) {
       console.error("Error querying entities", JSON.stringify(err));

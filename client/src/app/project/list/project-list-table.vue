@@ -4,9 +4,15 @@
       <hr />
       <b>{{ project.name }}</b>
       <br />
-      <button @click="showProject(project.id)">SHOW</button>
-      <button @click="editProject(project.id)">EDIT</button>
-      <button @click="removeProject(project.id)">REMOVE</button>
+      <b-button variant="outline-primary" @click="showProject(project.id)">
+        SHOW
+      </b-button>
+      <b-button variant="outline-dark" @click="editProject(project.id)">
+        EDIT
+      </b-button>
+      <b-button variant="outline-danger" @click="removeProject(project.id)">
+        REMOVE
+      </b-button>
     </li>
     <hr />
   </ul>

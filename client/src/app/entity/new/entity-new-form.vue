@@ -1,28 +1,60 @@
 <template>
   <div>
-    <label for="error">Error</label>
-    <entity-selector
-      v-model="entity.ErrorId"
-      entity="error"
-      option-name="id"
-    ></entity-selector>
-    <br />
-    <label for="browser">Browser</label>
-    <input id="browser" v-model="entity.browser" type="text" />
-    <br />
-    <label for="browserVersion">Browser Version</label>
-    <input id="browserVersion" v-model="entity.browserVersion" type="text" />
-    <br />
-    <label for="platform">Platform</label>
-    <input id="platform" v-model="entity.platform" type="text" />
-    <br />
-    <label for="platformVersion">Platform Version</label>
-    <input id="platformVersion" v-model="entity.platformVersion" type="text" />
-    <br />
-    <label for="location">Location</label>
-    <input id="location" v-model="entity.location" type="text" />
-    <br />
-    <button @click="addEntity()">CREATE</button>
+    <b-container fluid>
+      <b-row class="text-right">
+        <b-col sm="3">
+          <label> Error </label>
+        </b-col>
+        <b-col sm="9">
+          <entity-selector
+            v-model="entity.ErrorId"
+            entity="error"
+            option-name="id"
+          ></entity-selector>
+        </b-col>
+      </b-row>
+      <b-row class="text-right">
+        <b-col sm="3">
+          <label> Browser </label>
+        </b-col>
+        <b-col sm="9">
+          <b-form-input v-model="entity.browser"></b-form-input>
+        </b-col>
+      </b-row>
+      <b-row class="text-right">
+        <b-col sm="3">
+          <label> Browser Version </label>
+        </b-col>
+        <b-col sm="9">
+          <b-form-input v-model="entity.browserVersion"></b-form-input>
+        </b-col>
+      </b-row>
+      <b-row class="text-right">
+        <b-col sm="3">
+          <label> Platform </label>
+        </b-col>
+        <b-col sm="9">
+          <b-form-input v-model="entity.platform"></b-form-input>
+        </b-col>
+      </b-row>
+      <b-row class="text-right">
+        <b-col sm="3">
+          <label> Platform Version</label>
+        </b-col>
+        <b-col sm="9">
+          <b-form-input v-model="entity.platformVersion"></b-form-input>
+        </b-col>
+      </b-row>
+      <b-row class="text-right">
+        <b-col sm="3">
+          <label> Location </label>
+        </b-col>
+        <b-col sm="9">
+          <b-form-input v-model="entity.location"></b-form-input>
+        </b-col>
+      </b-row>
+    </b-container>
+    <b-button variant="outline-success" @click="addEntity()">CREATE!!</b-button>
   </div>
 </template>
 
@@ -38,7 +70,16 @@ export default Vue.extend({
   },
   data() {
     return {
-      entity: {}
+      entity: {},
+      textField: "",
+      types: [
+        { name: "Error", model: "ErrorId" },
+        { name: "Browser", model: "browser" },
+        { name: "Browser version", model: "browserVersion" },
+        { name: "Platform", model: "entity.platform" },
+        { name: "Platform version", model: "entity.platformVersion" },
+        { name: "Location", model: "location" }
+      ]
     };
   },
   methods: {
