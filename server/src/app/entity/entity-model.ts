@@ -31,9 +31,9 @@ export default (sequelize: any) => {
         defaultValue: DataTypes.UUIDV4
       },
       browser: DataTypes.STRING,
-      browser_version: DataTypes.STRING,
+      browserVersion: DataTypes.STRING,
       platform: DataTypes.STRING,
-      platform_version: DataTypes.STRING,
+      platformVersion: DataTypes.STRING,
       location: DataTypes.STRING
     },
     {}
