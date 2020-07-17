@@ -13,9 +13,4 @@ describe("Test the api paths", () => {
       .send([]);
     expect(response.status).toBe(200);
   });
-
-  test("Build should response the GET method", async () => {
-    const response = await request(app).get("/api/build");
-    expect(response.status).toBe(200);
-  });
 });

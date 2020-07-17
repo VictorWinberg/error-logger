@@ -4,7 +4,9 @@ import { omit } from "lodash/fp";
 export default (app: Express, db: any) => {
   app.get("/api/errors", async (req: Request, res: Response) => {
     try {
-      const results = await db.Error.findAll();
+      const results = await db.Error.findAll({
+        include: [{ model: db.Project, attributes: ["name"] }]
+      });
       return res.send(results);
     } catch (err) {
       console.error("Error querying errors", JSON.stringify(err));
