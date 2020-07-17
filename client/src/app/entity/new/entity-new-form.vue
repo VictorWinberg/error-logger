@@ -10,18 +10,14 @@
     <label for="browser">Browser</label>
     <input id="browser" v-model="entity.browser" type="text" />
     <br />
-    <label for="browser_version">Browser_version</label>
-    <input id="browser_version" v-model="entity.browser_version" type="text" />
+    <label for="browserVersion">Browser Version</label>
+    <input id="browserVersion" v-model="entity.browserVersion" type="text" />
     <br />
     <label for="platform">Platform</label>
     <input id="platform" v-model="entity.platform" type="text" />
     <br />
-    <label for="platform_version">Platform_version</label>
-    <input
-      id="platform_version"
-      v-model="entity.platform_version"
-      type="text"
-    />
+    <label for="platformVersion">Platform Version</label>
+    <input id="platformVersion" v-model="entity.platformVersion" type="text" />
     <br />
     <label for="location">Location</label>
     <input id="location" v-model="entity.location" type="text" />
