@@ -6,11 +6,11 @@
       <br />
       <b>{{ entity.browser }}</b>
       <br />
-      <b>{{ entity.browser_version }}</b>
+      <b>{{ entity.browserVersion }}</b>
       <br />
       <b>{{ entity.platform }}</b>
       <br />
-      <b>{{ entity.platform_version }}</b>
+      <b>{{ entity.platformVersion }}</b>
       <br />
       <b>{{ entity.location }}</b>
       <br />
