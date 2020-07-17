@@ -19,7 +19,7 @@ app.use(express.static(__dirname + "/static"));
 routes(app, db);
 
 app.get("/api/*", (_, res) => {
-  res.status(400).send("Not Found");
+  res.status(405).send("Method Not Allowed");
 });
 
 app.get("*", (_, res) => {
