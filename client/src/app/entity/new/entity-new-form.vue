@@ -84,8 +84,6 @@ export default Vue.extend({
   },
   methods: {
     async addEntity() {
-      console.log(this.entity);
-
       if (this.valid()) {
         await this.$store.dispatch("entity/create", this.entity);
 
