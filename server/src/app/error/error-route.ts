@@ -40,6 +40,28 @@ export default (app: Express, db: any) => {
     }
   });
 
+  /**
+   * @swagger
+   * /errors:
+   *   post:
+   *     summary: Create error
+   *     tags: [Error]
+   *     produces:
+   *       - application/json
+   *     parameters:
+   *       - name: "body"
+   *         in: "body"
+   *         required: true
+   *         schema:
+   *           $ref: "#/definitions/Error"
+   *     responses:
+   *       200:
+   *         description: OK
+   *         schema:
+   *           $ref: '#/definitions/Error'
+   *       400:
+   *         description: Bad Request
+   */
   app.post("/api/errors", async (req: Request, res: Response) => {
     try {
       const result = await db.Error.create(omit("id", req.body));
@@ -50,6 +72,30 @@ export default (app: Express, db: any) => {
     }
   });
 
+  /**
+   * @swagger
+   * /errors/{id}:
+   *   get:
+   *     summary: Get error
+   *     tags: [Error]
+   *     produces:
+   *       - application/json
+   *     parameters:
+   *       - name: id
+   *         in: path
+   *         required: true
+   *         type: string
+   *         format: uuid
+   *     responses:
+   *       200:
+   *         description: OK
+   *         schema:
+   *           $ref: '#/definitions/Error'
+   *       400:
+   *         description: Bad Request
+   *       404:
+   *         description: Not Found
+   */
   app.get("/api/errors/:id", async (req: Request, res: Response) => {
     const { id } = req.params;
     try {
@@ -64,6 +110,30 @@ export default (app: Express, db: any) => {
     }
   });
 
+  /**
+   * @swagger
+   * /errors/{id}:
+   *   put:
+   *     summary: Update error
+   *     tags: [Error]
+   *     produces:
+   *       - application/json
+   *     parameters:
+   *       - name: id
+   *         in: path
+   *         required: true
+   *         type: string
+   *         format: uuid
+   *     responses:
+   *       200:
+   *         description: OK
+   *         schema:
+   *           $ref: '#/definitions/Error'
+   *       400:
+   *         description: Bad Request
+   *       404:
+   *         description: Not Found
+   */
   app.put("/api/errors/:id", async (req: Request, res: Response) => {
     const { id } = req.params;
     try {
@@ -79,6 +149,28 @@ export default (app: Express, db: any) => {
     }
   });
 
+  /**
+   * @swagger
+   * /errors/{id}:
+   *   delete:
+   *     summary: Delete error
+   *     tags: [Error]
+   *     produces:
+   *       - application/json
+   *     parameters:
+   *       - name: id
+   *         in: path
+   *         required: true
+   *         type: string
+   *         format: uuid
+   *     responses:
+   *       200:
+   *         description: OK
+   *       400:
+   *         description: Bad Request
+   *       404:
+   *         description: Not Found
+   */
   app.delete("/api/errors/:id", async (req: Request, res: Response) => {
     const { id } = req.params;
     try {

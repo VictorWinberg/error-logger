@@ -5,9 +5,9 @@ import swaggerJSDoc from "swagger-jsdoc";
 const swaggerDef = {
   swaggerDefinition: {
     info: {
-      title: "error-logger", // Title (required)
+      title: "Glitchy", // Title (required)
       version: "1.0.0", // Version (required)
-      description: "Error Logger API" // Description (optional)
+      description: "Glitchy API" // Description (optional)
     },
     basePath: "/api" // Base path (optional)
   },
