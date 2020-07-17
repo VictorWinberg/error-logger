@@ -26,7 +26,7 @@
           <label> Browser Version </label>
         </b-col>
         <b-col sm="9">
-          <b-form-input v-model="entity.browser_version"></b-form-input>
+          <b-form-input v-model="entity.browserVersion"></b-form-input>
         </b-col>
       </b-row>
       <b-row class="text-right">
@@ -42,7 +42,7 @@
           <label> Platform Version</label>
         </b-col>
         <b-col sm="9">
-          <b-form-input v-model="entity.platform_version"></b-form-input>
+          <b-form-input v-model="entity.platformVersion"></b-form-input>
         </b-col>
       </b-row>
       <b-row class="text-right">
@@ -102,7 +102,7 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .error {
   color: red;
 }
