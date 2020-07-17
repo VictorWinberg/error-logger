@@ -12,11 +12,11 @@ import { DataTypes } from "sequelize";
  *         $ref: "#/definitions/Error"
  *       browser:
  *         type: string
- *       browser_version:
+ *       browserVersion:
  *         type: string
  *       platform:
  *         type: string
- *       platform_version:
+ *       platformVersion:
  *         type: string
  *       location:
  *         type: string
