@@ -26,12 +26,7 @@ export default (app: Express, db: any) => {
   app.get("/api/errors", async (req: Request, res: Response) => {
     try {
       const results = await db.Error.findAll({
-        include: [
-          {
-            model: db.Project,
-            attributes: ["name"]
-          }
-        ]
+        include: [{ model: db.Project, attributes: ["name"] }]
       });
       return res.send(results);
     } catch (err) {
@@ -178,9 +173,7 @@ export default (app: Express, db: any) => {
       if (result == null) {
         return res.status(404).send("Error Not Found");
       }
-      await result.destroy({
-        force: true
-      });
+      await result.destroy({ force: true });
       return res.send({ id });
     } catch (err) {
       console.error("Error deleting error", JSON.stringify(err));
