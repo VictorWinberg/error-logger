@@ -119,6 +119,11 @@ export default (app: Express, db: any) => {
    *         required: true
    *         type: string
    *         format: uuid
+   *       - name: "body"
+   *         in: "body"
+   *         required: true
+   *         schema:
+   *           $ref: "#/definitions/Project"
    *     responses:
    *       200:
    *         description: OK

@@ -384,6 +384,7 @@ export class ApiService {
 
     putEntitiesByIdURL(parameters: {
         'id': string,
+        'body': Entity,
     } & CommonRequestOptions): string {
         let queryParameters: QueryParameters = {};
         const domain = parameters.$domain ? parameters.$domain : this.domain;
@@ -416,9 +417,11 @@ export class ApiService {
      * @method
      * @name ApiService#putEntitiesById
      * @param {string} id - Glitchy API
+     * @param {} body - Glitchy API
      */
     putEntitiesById(parameters: {
         'id': string,
+        'body': Entity,
     } & CommonRequestOptions): Promise < ResponseWithBody < 200, Entity > | ResponseWithBody < 400, void > | ResponseWithBody < 404, void >> {
         const domain = parameters.$domain ? parameters.$domain : this.domain;
         let path = '/entities/{id}';
@@ -443,6 +446,15 @@ export class ApiService {
 
             if (parameters['id'] === undefined) {
                 reject(new Error('Missing required  parameter: id'));
+                return;
+            }
+
+            if (parameters['body'] !== undefined) {
+                body = parameters['body'];
+            }
+
+            if (parameters['body'] === undefined) {
+                reject(new Error('Missing required  parameter: body'));
                 return;
             }
 
@@ -726,6 +738,7 @@ export class ApiService {
 
     putErrorsByIdURL(parameters: {
         'id': string,
+        'body': Error,
     } & CommonRequestOptions): string {
         let queryParameters: QueryParameters = {};
         const domain = parameters.$domain ? parameters.$domain : this.domain;
@@ -758,9 +771,11 @@ export class ApiService {
      * @method
      * @name ApiService#putErrorsById
      * @param {string} id - Glitchy API
+     * @param {} body - Glitchy API
      */
     putErrorsById(parameters: {
         'id': string,
+        'body': Error,
     } & CommonRequestOptions): Promise < ResponseWithBody < 200, Error > | ResponseWithBody < 400, void > | ResponseWithBody < 404, void >> {
         const domain = parameters.$domain ? parameters.$domain : this.domain;
         let path = '/errors/{id}';
@@ -785,6 +800,15 @@ export class ApiService {
 
             if (parameters['id'] === undefined) {
                 reject(new Error('Missing required  parameter: id'));
+                return;
+            }
+
+            if (parameters['body'] !== undefined) {
+                body = parameters['body'];
+            }
+
+            if (parameters['body'] === undefined) {
+                reject(new Error('Missing required  parameter: body'));
                 return;
             }
 
@@ -1068,6 +1092,7 @@ export class ApiService {
 
     putProjectsByIdURL(parameters: {
         'id': string,
+        'body': Project,
     } & CommonRequestOptions): string {
         let queryParameters: QueryParameters = {};
         const domain = parameters.$domain ? parameters.$domain : this.domain;
@@ -1100,9 +1125,11 @@ export class ApiService {
      * @method
      * @name ApiService#putProjectsById
      * @param {string} id - Glitchy API
+     * @param {} body - Glitchy API
      */
     putProjectsById(parameters: {
         'id': string,
+        'body': Project,
     } & CommonRequestOptions): Promise < ResponseWithBody < 200, Project > | ResponseWithBody < 400, void > | ResponseWithBody < 404, void >> {
         const domain = parameters.$domain ? parameters.$domain : this.domain;
         let path = '/projects/{id}';
@@ -1127,6 +1154,15 @@ export class ApiService {
 
             if (parameters['id'] === undefined) {
                 reject(new Error('Missing required  parameter: id'));
+                return;
+            }
+
+            if (parameters['body'] !== undefined) {
+                body = parameters['body'];
+            }
+
+            if (parameters['body'] === undefined) {
+                reject(new Error('Missing required  parameter: body'));
                 return;
             }
 
