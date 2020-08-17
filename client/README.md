@@ -1,5 +1,8 @@
 # glitchy-client
 
+## To Do
+- Add swagger-ui types/interfaces to views, e.g. `entities` in `error-list-table`.
+
 ## Project setup
 
 ```
