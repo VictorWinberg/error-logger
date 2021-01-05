@@ -31,7 +31,7 @@
     "@types/jest": "24.9.1",
     "@types/lodash": "4.14.161",
     "@types/mustache": "0.8.32",
-    "@types/node": "12.12.56",
+    "@types/node": "12.19.12",
     "@types/prettier": "1.19.1",
     "@types/sequelize": "4.28.9",
     "@types/supertest": "2.0.10",
