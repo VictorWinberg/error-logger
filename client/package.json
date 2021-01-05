@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "bootstrap": "4.5.2",
-    "bootstrap-vue": "2.16.0",
+    "bootstrap-vue": "2.21.2",
     "@mdi/font": "5.5.55",
     "buefy": "0.9.3",
     "core-js": "3.6.5",
